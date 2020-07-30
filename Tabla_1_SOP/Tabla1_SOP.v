@@ -28,7 +28,7 @@ module Tabla1_SOP();
 	end
 	initial 
 		begin
-			$dumpfile("ejemplo_tb.vcd");
+			$dumpfile("Tabla1_SOP_tb.v");
 			$dumpvars(0, ejemplo);
 		end 
 
