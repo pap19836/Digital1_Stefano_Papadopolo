@@ -10,7 +10,7 @@ module Tabla1_SOP();
 	and A3(w6, A, w2, w3);
 	and A4(w7, A, w2, C);
 	and A5(w8, A, B, C);
-	or (out, w4, w5, w6, w7, w8);
+	or O1(out, w4, w5, w6, w7, w8);
 
 	initial begin
 		$display("A B C | Y");
@@ -24,12 +24,12 @@ module Tabla1_SOP();
 		#1 B=0; C=1;
 		#1 B=1; C=0;
 		#1 C=1;
-		# $finish;
+		#1 $finish;
 	end
 	initial 
 		begin
-			$dumpfile("Tabla1_SOP_tb.v");
-			$dumpvars(0, ejemplo);
-		end 
+			$dumpfile("Tabla1_SOP_tb.vcd");
+			$dumpvars(0, Tabla1_SOP);
+		end
 
 endmodule
