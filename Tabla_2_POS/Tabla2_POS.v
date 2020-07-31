@@ -1,16 +1,17 @@
-module Tabla1_SOP();
+module Tabla2_POS();
 	reg A, B, C;
 	wire w1, w2, w3, w4, w5, w6, w7, w8, out;
 
 	not N1(w1, A);
-	not N3(w2, B);
-	not N4(w3, C);
-	and A1(w4, w1, w2, w3);
-	and A2(w5, w1, B, w3);
-	and A3(w6, A, w2, w3);
-	and A4(w7, A, w2, C);
-	and A5(w8, A, B, C);
-	or O1(out, w4, w5, w6, w7, w8);
+	not N2(w2, B);
+	not N3(w3, C);
+	or O1(w4, A, B, C);
+	or O2(w5, A, w2, C);
+	or O3(w6, A, w2, w3);
+	or O4(w7, w1, B, C);
+	or O5(w8, w1, B, w3);
+	and A1(out, w4, w5, w6, w7, w8);
+
 
 	initial begin
 		$display("A B C | Y");
@@ -28,8 +29,7 @@ module Tabla1_SOP();
 	end
 	initial 
 		begin
-			$dumpfile("Tabla1_SOP_tb.vcd");
-			$dumpvars(0, Tabla1_SOP);
+			$dumpfile("Tabla2_POS_tb.vcd");
+			$dumpvars(0, Tabla2_POS);
 		end
-
 endmodule
