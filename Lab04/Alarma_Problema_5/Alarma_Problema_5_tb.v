@@ -11,7 +11,7 @@ module testbench();
 		$display("GateLevel");
 		$display("Armada Cerradas Movimiento |  ENCENCIDA");
 		$display("---------------------------------------");
-		$monitor("\t %b     %b        %b      |     %b", A1, C1, M1, E1);
+		$monitor(".  %b     %b        %b     |     %b", A1, C1, M1, E1);
 		A1=0; C1=0; M1=0;
 		#1 M1=1;
 		#1 C1=1; M1=0;
@@ -25,10 +25,10 @@ module testbench();
 /*Behavioral*/
 	initial begin
 		#8
-		$display("Behavioral");
-		$display("Armada Cerradas Movimiento |   E");
-		$display("--------------------------------");
-		$monitor("\t %b     %b        %b      | %b", A2, C2, M2, E2);
+		$display("\nBehavioral");
+		$display("Armada Cerradas Movimiento |   Encendida");
+		$display("----------------------------------------");
+		$monitor(".  %b     %b        %b     |       %b", A2, C2, M2, E2);
 		A2=0; C2=0; M2=0;
 		#1 M2=1;
 		#1 C2=1; M2=0;
@@ -37,6 +37,7 @@ module testbench();
 		#1 M2=1;
 		#1 C2=1; M2=0;
 		#1 M2=1;
+		#1 $finish;
 	end
 
 	initial begin
