@@ -1,5 +1,5 @@
 $date
-	Sat Oct 10 20:19:25 2020
+	Sat Oct 10 21:00:52 2020
 $end
 $version
 	Icarus Verilog
@@ -20,7 +20,7 @@ $var reg 2 & state [1:0] $end
 $upscope $end
 $upscope $end
 $scope module testbench_engine $end
-$var wire 1 ' state_out $end
+$var wire 2 ' state_out [1:0] $end
 $var reg 1 ( b_in $end
 $var reg 1 ) f_in $end
 $scope module engine $end
@@ -52,7 +52,7 @@ $upscope $end
 $upscope $end
 $upscope $end
 $scope module testbench_movement $end
-$var wire 1 3 state_out $end
+$var wire 3 3 state_out [2:0] $end
 $var reg 1 4 l_in $end
 $var reg 1 5 r_in $end
 $scope module left_right $end
@@ -97,7 +97,7 @@ x7
 bx 6
 x5
 x4
-x3
+bx 3
 x2
 x1
 x0
@@ -109,7 +109,7 @@ x+
 bx *
 x)
 x(
-x'
+bx '
 bx &
 bx %
 0$
@@ -121,18 +121,18 @@ $end
 0/
 01
 b0 -
-0'
 0;
 0=
 b0 9
-03
 b0 %
 00
 02
+b0 '
 b0 *
 b0 .
 0<
 0>
+b0 3
 b0 6
 b0 :
 b0 &
@@ -253,7 +253,7 @@ b1 9
 #180
 08
 b1 9
-13
+b1 3
 b1 6
 b1 :
 1<
@@ -274,7 +274,7 @@ b10 9
 #200
 08
 b10 9
-03
+b10 3
 b10 6
 b10 :
 1<
@@ -294,7 +294,7 @@ b11 9
 14
 #220
 08
-13
+b11 3
 b11 6
 b11 :
 1<
@@ -331,7 +331,7 @@ b10 9
 #260
 07
 b10 9
-03
+b10 3
 b10 6
 b10 :
 1>
@@ -352,7 +352,7 @@ b1 9
 #280
 07
 b1 9
-13
+b1 3
 b1 6
 b1 :
 1>
@@ -373,7 +373,7 @@ b0 9
 #300
 07
 b0 9
-03
+b0 3
 b0 6
 b0 :
 1>
@@ -394,6 +394,7 @@ b100 9
 #320
 07
 b100 9
+b100 3
 b100 6
 b100 :
 1>
@@ -414,7 +415,7 @@ b101 9
 #340
 07
 b101 9
-13
+b101 3
 b101 6
 b101 :
 1>
@@ -434,7 +435,7 @@ b110 9
 15
 #360
 07
-03
+b110 3
 b110 6
 b110 :
 1>
@@ -472,6 +473,7 @@ b110 :
 0(
 #405
 b0 9
+b0 3
 b0 6
 b0 :
 0#
@@ -491,6 +493,7 @@ b10 -
 1(
 #430
 0,
+b10 '
 b10 *
 b10 .
 10
@@ -527,6 +530,7 @@ b0 -
 #470
 0+
 b0 -
+b0 '
 b0 *
 b0 .
 12
@@ -547,7 +551,7 @@ b1 -
 #490
 0+
 b1 -
-1'
+b1 '
 b1 *
 b1 .
 12
@@ -567,6 +571,7 @@ b11 -
 1)
 #510
 0+
+b11 '
 b11 *
 b11 .
 12

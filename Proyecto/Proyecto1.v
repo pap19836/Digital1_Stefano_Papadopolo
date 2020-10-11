@@ -57,8 +57,6 @@ endmodule // alarm
 module movement(input clk, reset, l_in, r_in,
                 output [2:0] state_out);
 
-  wire l, r;
-
   reg [2:0] state, nextstate;
   parameter S0 = 3'b000;
   parameter L1 = 3'b001;
@@ -98,6 +96,42 @@ module movement(input clk, reset, l_in, r_in,
         else      nextstate = R2;
     R3: if (l_out&~r_out) nextstate = R2;
         else      nextstate = R3;
+    endcase
+
+  //output
+  assign state_out = state;
+endmodule
+
+//ENGINE
+module engine(input clk, reset, b_in, f_in,
+              output [1:0] state_out);
+
+  reg[1:0] state, nextstate;
+  parameter  S0 = 2'b00;
+  parameter  F1 = 2'b01;
+  parameter  F2 = 2'b11;
+  parameter  B1 = 2'b10;
+
+  antirebote ab(clk, reset, b_in, b_out);
+  antirebote af(clk, reset, f_in, f_out);
+
+  always @ ( posedge clk, posedge reset)
+    if (reset) state <= S0;
+    else       state <= nextstate;
+
+  //states
+  always @ (*)
+    case(state)
+    S0: if (b_out&~f_out) nextstate = B1;
+        else if (~b_out&f_out) nextstate = F1;
+        else              nextstate = S0;
+    B1: if (~b_out&f_out) nextstate = S0;
+        else              nextstate = B1;
+    F1: if (b_out&~f_out) nextstate = S0;
+        else if (~b_out&f_out) nextstate = F2;
+        else              nextstate = F1;
+    F2: if (b_out&~f_out) nextstate = F1;
+        else              nextstate = F2;
     endcase
 
   //output
