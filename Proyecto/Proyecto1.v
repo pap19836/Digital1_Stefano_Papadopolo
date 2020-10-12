@@ -55,7 +55,8 @@ endmodule // alarm
 
 //Movement
 module movement(input clk, reset, l_in, r_in,
-                output [2:0] state_out);
+                output [2:0] state_out,
+                output danger);
 
   reg [2:0] state, nextstate;
   parameter S0 = 3'b000;
@@ -100,6 +101,7 @@ module movement(input clk, reset, l_in, r_in,
 
   //output
   assign state_out = state;
+  assign danger = (state == R3 | state == L3);
 endmodule
 
 //ENGINE
@@ -137,3 +139,24 @@ module engine(input clk, reset, b_in, f_in,
   //output
   assign state_out = state;
 endmodule
+
+//FINAL
+module full (input clk, reset, l_in, r_in, u_in, d_in, f_in, b_in,
+              input [1:0] auto,
+              output [2:0] left_right, up_down,
+              output [1:0] forward_backward,
+              output alarm);
+  assign l = l_in&auto[1];
+  assign r = r_in&auto[1];
+  assign u = u_in&auto[1];
+  assign d = d_in&auto[1];
+  assign f = f_in&auto[0];
+  assign b = b_in&auto[0];
+  wire dangerLR, dangerUD, danger;
+  assign danger = dangerLR|dangerUD;
+
+  movement LR(clk, reset, l, r, left_right, dangerLR);
+  movement UD(clk, reset, d, u, up_down, dangerUD);
+  engine engine(clk, reset, b, f, forward_backward);
+  alarm ALARM(clk, reset, danger, alarm);
+endmodule // full
