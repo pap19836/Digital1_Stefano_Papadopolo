@@ -1,0 +1,18 @@
+[*]
+[*] GTKWave Analyzer v3.3.77 (w)1999-2016 BSI
+[*] Sat Oct 24 01:53:27 2020
+[*]
+[dumpfile] "C:\Users\stefa\OneDrive\Documentos\GitHub\Digital1_Stefano_Papadopolo\Lab08\Lab08_tb.vcd"
+[dumpfile_mtime] "Sat Oct 24 01:53:16 2020"
+[dumpfile_size] 3381
+[savefile] "C:\Users\stefa\OneDrive\Documentos\GitHub\Digital1_Stefano_Papadopolo\Lab08\Lab08_tb.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*0.000000 1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 197
+[signals_width] 78
+[sst_expanded] 1
+[sst_vpaned_height] 153
+[pattern_trace] 1
+[pattern_trace] 0
