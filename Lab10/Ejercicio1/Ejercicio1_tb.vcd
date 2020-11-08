@@ -1,0 +1,271 @@
+$date
+	Sat Nov 07 21:50:25 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module Ejercicio1_tb $end
+$var wire 8 ! program_byte [7:0] $end
+$var wire 4 " oprnd [3:0] $end
+$var wire 4 # inst [3:0] $end
+$var reg 1 $ clk $end
+$var reg 1 % enable_counter $end
+$var reg 1 & enable_fetch $end
+$var reg 12 ' in_counter [11:0] $end
+$var reg 1 ( load_counter $end
+$var reg 1 ) reset $end
+$scope module ejercicio1 $end
+$var wire 1 $ clk $end
+$var wire 1 % enable_counter $end
+$var wire 1 & enable_fetch $end
+$var wire 12 * in_counter [11:0] $end
+$var wire 1 ( load_counter $end
+$var wire 8 + program_byte [7:0] $end
+$var wire 1 ) reset $end
+$var wire 8 , rom_out [7:0] $end
+$var wire 12 - out_counter [11:0] $end
+$var wire 4 . oprnd [3:0] $end
+$var wire 4 / inst [3:0] $end
+$scope module ROM $end
+$var wire 8 0 y [7:0] $end
+$var wire 12 1 addr [11:0] $end
+$upscope $end
+$scope module counter $end
+$var wire 1 ( a $end
+$var wire 1 $ clk $end
+$var wire 1 % enable $end
+$var wire 12 2 load [0:11] $end
+$var wire 1 ) reset $end
+$var reg 12 3 out [0:11] $end
+$upscope $end
+$scope module fetch $end
+$var wire 1 $ clk $end
+$var wire 8 4 d [7:0] $end
+$var wire 1 & enable $end
+$var wire 1 ) reset $end
+$var reg 8 5 q [7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx 5
+bx 4
+bx 3
+b10 2
+bx 1
+bx 0
+bx /
+bx .
+bx -
+bx ,
+bx +
+b10 *
+0)
+0(
+b10 '
+0&
+0%
+0$
+bx #
+bx "
+bx !
+$end
+#5
+b0 "
+b0 .
+b0 #
+b0 /
+b0 !
+b0 +
+b0 ,
+b0 0
+b0 4
+b0 -
+b0 1
+b0 3
+b0 5
+1&
+1%
+1)
+1$
+#10
+0)
+0$
+#15
+b11111111 !
+b11111111 +
+b11111111 ,
+b11111111 0
+b11111111 4
+b1 -
+b1 1
+b1 3
+1$
+#20
+0$
+#25
+b1111 "
+b1111 .
+b1111 #
+b1111 /
+b10101010 !
+b10101010 +
+b10101010 ,
+b10101010 0
+b10101010 4
+b10 -
+b10 1
+b10 3
+b11111111 5
+1$
+#30
+0$
+#35
+b1010 "
+b1010 .
+b1010 #
+b1010 /
+b1010101 !
+b1010101 +
+b1010101 ,
+b1010101 0
+b1010101 4
+b11 -
+b11 1
+b11 3
+b10101010 5
+1$
+#40
+0$
+#45
+b101 "
+b101 .
+b101 #
+b101 /
+b11000011 !
+b11000011 +
+b11000011 ,
+b11000011 0
+b11000011 4
+b100 -
+b100 1
+b100 3
+b1010101 5
+1$
+#50
+0$
+#55
+b11 "
+b11 .
+b1100 #
+b1100 /
+b111100 !
+b111100 +
+b111100 ,
+b111100 0
+b111100 4
+b101 -
+b101 1
+b101 3
+b11000011 5
+1$
+#60
+b10101010 !
+b10101010 +
+b10101010 ,
+b10101010 0
+b10101010 4
+b10 -
+b10 1
+b10 3
+0$
+1(
+#65
+b1010 "
+b1010 .
+b1010 #
+b1010 /
+b1010101 !
+b1010101 +
+b1010101 ,
+b1010101 0
+b1010101 4
+b11 -
+b11 1
+b11 3
+b10101010 5
+1$
+0(
+#70
+0$
+0%
+#75
+b101 "
+b101 .
+b101 #
+b101 /
+b1010101 5
+1$
+#80
+0$
+#85
+1$
+#90
+b11000011 !
+b11000011 +
+b11000011 ,
+b11000011 0
+b11000011 4
+b100 -
+b100 1
+b100 3
+0$
+1%
+#95
+b111100 !
+b111100 +
+b111100 ,
+b111100 0
+b111100 4
+b101 -
+b101 1
+b101 3
+1$
+0&
+#100
+0$
+#105
+b1111 !
+b1111 +
+b1111 ,
+b1111 0
+b1111 4
+b110 -
+b110 1
+b110 3
+1$
+#110
+0$
+#115
+b1111 "
+b1111 .
+b0 #
+b0 /
+b11110000 !
+b11110000 +
+b11110000 ,
+b11110000 0
+b11110000 4
+b111 -
+b111 1
+b111 3
+b1111 5
+1$
+1&
+#120
+0$
