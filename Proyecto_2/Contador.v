@@ -3,13 +3,13 @@ module contador (input clk, reset, enable, a,
                  output reg [0:11] out);
 
 
-  always @(posedge clk, posedge reset, posedge enable, posedge a)
-    if (~enable)
+  always @(posedge clk, posedge reset)
+    if (~enable&~a)
       out <= out;
     else if (reset)
       out <= 12'b000000000000;
-    else if (a&enable)
+    else if (a)
       out <= load;
-    else if (enable)
+    else if (enable&~a)
       out <= out + 12'b000000000001;
 endmodule // contador

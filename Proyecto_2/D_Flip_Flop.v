@@ -10,7 +10,7 @@ module D_Flip_Flop_2(input clk, reset, enable,
 										 input [1:0] d,
 									   output reg [1:0] q);
 	always@(posedge clk, posedge reset)
-	if (reset) q <= 0;
+	if (reset) q <= 2'b0;
 	else if (enable) q <= d;
 	else q <= q;
 endmodule

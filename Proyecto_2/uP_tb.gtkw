@@ -1,0 +1,40 @@
+[*]
+[*] GTKWave Analyzer v3.3.77 (w)1999-2016 BSI
+[*] Fri Nov 20 00:39:02 2020
+[*]
+[dumpfile] "C:\Users\stefa\OneDrive\Documentos\GitHub\Digital1_Stefano_Papadopolo\Proyecto_2\uP_tb.vcd"
+[dumpfile_mtime] "Fri Nov 20 00:37:21 2020"
+[dumpfile_size] 27559
+[savefile] "C:\Users\stefa\OneDrive\Documentos\GitHub\Digital1_Stefano_Papadopolo\Proyecto_2\uP_tb.gtkw"
+[timestart] 638
+[size] 866 792
+[pos] 556 -1
+*-4.000000 12 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testbench.
+[treeopen] testbench.uPmodule.
+[sst_width] 197
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 221
+@28
+testbench.uPmodule.clock
+testbench.uPmodule.phase
+testbench.uPmodule.reset
+@22
+testbench.uPmodule.PC[11:0]
+testbench.uPmodule.program_byte[7:0]
+testbench.uPmodule.instr[3:0]
+testbench.uPmodule.oprnd[3:0]
+testbench.uPmodule.data_bus[3:0]
+testbench.uPmodule.accu[3:0]
+@28
+testbench.uPmodule.c_flag
+testbench.uPmodule.z_flag
+testbench.uPmodule.counter.enable
+testbench.uPmodule.counter.a
+@22
+testbench.uPmodule.counter.load[0:11]
+@23
+testbench.uPmodule.counter.out[0:11]
+[pattern_trace] 1
+[pattern_trace] 0

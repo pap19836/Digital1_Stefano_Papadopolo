@@ -15,15 +15,14 @@ module uP(input clock, reset,
   ROM ROM(PC, program_byte);
 
 //Fetch
-  wire enable_fetch;
   wire [3:0] instr, oprnd;
-  D_Flip_Flop_8 fetch(clock, reset, enable_fetch, program_byte, {instr, oprnd});
+  D_Flip_Flop_8 fetch(clock, reset, ~phase, program_byte, {instr, oprnd});
 
 
 //RAM
   wire [11:0] address_RAM;
   wire we, cs;
-  assign address_RAM = {program_byte, oprnd};
+  assign address_RAM = {oprnd, program_byte};
   RAM RAM(clock, we, cs, address_RAM, data_bus, data_bus);
 
 //Bus1
@@ -34,9 +33,9 @@ module uP(input clock, reset,
 //ALU
   wire [3:0] accu, alu_out;
   wire [2:0] f;
-  wire c_flag, z_flag;
+  wire c, zero;
   D_Flip_Flop_4 accumulator(clock, reset, enable_accu, alu_out, accu);
-  alu alu (reset, accu, data_bus, f, alu_out, c_flag, z_flag);
+  alu alu (reset, accu, data_bus, f, alu_out, c, zero);
 
 //bus2
   wire enable_bus2;
@@ -57,8 +56,10 @@ wire enable_out;
 
 //decoder
   wire [1:0] flags;
-  wire enable_flags;
-  D_Flip_Flop_2 FLAGS(clock, reset, enable_flags, {c_flag, z_flag}, flags);
+  wire enable_flags, c_flag, z_flag;
+  assign c_flag = flags[1];
+  assign z_flag = flags[0];
+  D_Flip_Flop_2 FLAGS(clock, reset, enable_flags, {c, zero}, flags);
   decoder decoder({instr, flags, phase}, {enable_counter, load_counter, enable_accu,
                   enable_flags, f[2], f[1], f[0], cs, we, enable_bus2,
                   enable_in, enable_bus1, enable_out});

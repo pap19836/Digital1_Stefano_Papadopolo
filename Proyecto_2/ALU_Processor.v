@@ -4,7 +4,6 @@ module alu (input reset,
             output reg [3:0] y,
             output reg c_out, zero);
 
-  reg [4:0] overflow_aid;
 
   parameter pass_a = 3'b000;
   parameter pass_b = 3'b010;
@@ -13,18 +12,15 @@ module alu (input reset,
   parameter NOR = 3'b100;
 
   always @(*) begin
+    c_out = 0;
     case(f)
       pass_a: y = a;
       pass_b: y = b;
       compare: begin
-                overflow_aid = a-b;
-                y = a;
-                c_out = overflow_aid[4];
+            {c_out, y} = a-b;
                 end
       ADD: begin
-            overflow_aid = a+b;
-            y = overflow_aid[3:0];
-            c_out = overflow_aid[4];
+            {c_out, y} = a+b;
            end
       NOR: y = a~|b;
       default: y = 3'b000;
