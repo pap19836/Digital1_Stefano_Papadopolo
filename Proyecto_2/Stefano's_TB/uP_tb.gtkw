@@ -1,0 +1,37 @@
+[*]
+[*] GTKWave Analyzer v3.3.77 (w)1999-2016 BSI
+[*] Sun Nov 22 04:59:51 2020
+[*]
+[dumpfile] "C:\Users\stefa\OneDrive\Documentos\GitHub\Digital1_Stefano_Papadopolo\Proyecto_2\Stefano's_TB\uP_tb.vcd"
+[dumpfile_mtime] "Sun Nov 22 04:52:00 2020"
+[dumpfile_size] 33347
+[savefile] "C:\Users\stefa\OneDrive\Documentos\GitHub\Digital1_Stefano_Papadopolo\Proyecto_2\Stefano's_TB\uP_tb.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-4.000000 36 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] testbench.
+[sst_width] 211
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 154
+@28
+testbench.uP.clock
+testbench.uP.phase
+testbench.uP.reset
+@22
+testbench.pushbuttons[3:0]
+testbench.uP.PC[11:0]
+testbench.uP.program_byte[7:0]
+testbench.uP.instr[3:0]
+testbench.uP.oprnd[3:0]
+testbench.address_RAM[11:0]
+testbench.data_bus[3:0]
+testbench.accu[3:0]
+@28
+testbench.c_flag
+testbench.z_flag
+@22
+testbench.FF_out[3:0]
+[pattern_trace] 1
+[pattern_trace] 0
